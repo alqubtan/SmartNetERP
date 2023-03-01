@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SmartNetERP.IRepository.Master;
-using SmartNetERP.RequestDTO.Master.Module;
 using SmartNetERP.RequestDTO.Master.Nationality;
-using SmartNetERP.ResponseDTO.Master.Module;
 using SmartNetERP.ResponseDTO.Master.Nationality;
 
 namespace SmartNetERP.Controllers.Master
@@ -60,7 +58,7 @@ namespace SmartNetERP.Controllers.Master
 
             if (nationality == null) return BadRequest(StatusCodes.Status500InternalServerError);
 
-            ModuleResponseDTO responseDTO = new ModuleResponseDTO()
+            NationalityResponseDTO responseDTO = new NationalityResponseDTO()
             {
                 Id = nationality.Id,
                 Name = nationality.Name,
@@ -71,7 +69,7 @@ namespace SmartNetERP.Controllers.Master
         }
 
         [HttpDelete]
-        public async Task<IActionResult> DeleteModule(Guid id)
+        public async Task<IActionResult> DeleteNationality(Guid id)
         {
             var nationality = await _INationalityRepository.GetNationalityAsync(id);
 
@@ -82,7 +80,7 @@ namespace SmartNetERP.Controllers.Master
             if (deletedNationality == null) return BadRequest(StatusCodes.Status500InternalServerError);
 
 
-            ModuleResponseDTO responseDTO = new ModuleResponseDTO()
+            NationalityResponseDTO responseDTO = new NationalityResponseDTO()
             {
                 Id = deletedNationality.Id,
                 Name = deletedNationality.Name,
@@ -93,7 +91,7 @@ namespace SmartNetERP.Controllers.Master
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateModule(Guid id, UpdateNationalityRequestDTO updateNationalityRequestDTO)
+        public async Task<IActionResult> UpdateNationality(Guid id, UpdateNationalityRequestDTO updateNationalityRequestDTO)
         {
             
 
@@ -107,7 +105,7 @@ namespace SmartNetERP.Controllers.Master
 
             if (updatedNationality == null) BadRequest(StatusCodes.Status500InternalServerError);
 
-            ModuleResponseDTO responseDTO = new ModuleResponseDTO()
+            NationalityResponseDTO responseDTO = new NationalityResponseDTO()
             {
                 Id = updatedNationality.Id,
                 Name = updatedNationality.Name,

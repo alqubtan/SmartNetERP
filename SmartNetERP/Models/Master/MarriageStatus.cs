@@ -7,7 +7,7 @@ namespace SmartNetERP.Models.Master
         [Key]
         public Guid Id { get; set; }
         [Required(ErrorMessage = "هذا الحقل مطلوب")]
-        public string marriageStatus { get; set; }
+        public string Name { get; set; }
         public bool IsActive { get; set; }
     }
 }

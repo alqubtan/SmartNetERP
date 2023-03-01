@@ -2,7 +2,6 @@
 using SmartNetERP.IRepository.Master;
 using SmartNetERP.RequestDTO.Master.Module;
 using SmartNetERP.ResponseDTO.Master.Module;
-using SmartNetERP.ResponseDTO.Master.Privilege;
 
 namespace SmartNetERP.Controllers.Master
 {
