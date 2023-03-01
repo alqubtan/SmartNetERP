@@ -10,10 +10,14 @@ namespace SmartNetERP.Data
         {
         }
 
-        public DbSet<User> Users { get; set; }
-        public DbSet<Role> Roles { get; set; }
         public DbSet<Privilege> Privileges { get; set; }
-        public DbSet<UserRole> UserRoles { get; set; }
-        public DbSet<RolePrivilege> RolePrivileges { get; set; }
+        public DbSet<Module> Modules { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Religion> Religions { get; set; }
+        public DbSet<Nationality> Nationalities { get; set; }
+        public DbSet<MarriageStatus> MarriageStatuses { get; set; }
+        public DbSet<BloodType> BloodTypes { get; set; }
+   
     }
 }

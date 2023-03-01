@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SmartNetERP.Models.Master
 {
@@ -7,12 +8,16 @@ namespace SmartNetERP.Models.Master
     {
         [Key]
         public Guid Id { get; set; }
-
-        public string PasswordHash { get; set; }
         [Required(ErrorMessage = "هذا الحقل مطلوب")]
-        public string Email { get; set; }
-        [ValidateNever]
-        public List<UserRole> UserRoles { get; set; }
-        public bool IsActive = true;
+        public string Email { get; set; } = string.Empty;
+        [Required(ErrorMessage = "هذا الحقل مطلوب")]
+        public string Password { get; set; } = string.Empty;
+        public bool IsActive { get; set; }
+
+
     }
+
+
+
 }
+

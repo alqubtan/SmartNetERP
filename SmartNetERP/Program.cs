@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using SmartNetERP.Data;
+using SmartNetERP.IRepository.Master;
+using SmartNetERP.Repository.Master;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +16,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default"))
     
     );
+
+builder.Services.AddScoped<IPrivilegeRepository, PrivilegeRepository>();
+builder.Services.AddScoped<IModuleRepository, ModuleRepository>();
+builder.Services.AddScoped<INationalityRepository, NationalityRepository>();
 
 var app = builder.Build();
 

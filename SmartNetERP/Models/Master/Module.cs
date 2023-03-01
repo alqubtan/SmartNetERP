@@ -3,16 +3,15 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SmartNetERP.Models.Master
 {
-    public class Role
+    public class Module
     {
         [Key]
         public Guid Id { get; set; }
-        [Required(ErrorMessage ="هذا الحقل مطلوب")]
+        [Required(ErrorMessage = "هذا الحقل مطلوب")]
         public string Name { get; set; }
+
+        public bool IsActive { get; set; }
         [ValidateNever]
-        public List<UserRole> UserRoles { get; set; }
-        [ValidateNever]
-        public List<RolePrivilege> RolePrivileges { get; set; }
-        public bool IsActive = true;
+        public IEnumerable<Privilege> Privileges { get; set; }
     }
 }
